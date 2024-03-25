@@ -6,9 +6,16 @@ from torch.optim import Adam
 from torch.autograd import Variable
 import matplotlib.pyplot as plt
 import numpy as np
-
+from PIL import Image
+# from torchvision.datasets import CIFAR10
 from torchvision.transforms import transforms
 from torch.utils.data import DataLoader
+
+
+# Open an image file
+image = Image.open("image.jpg")
+
+
 
 # Loading and normalizing the data.
 # Define transformations for the training and test sets
@@ -191,7 +198,7 @@ if __name__ == "__main__":
     print('Finished Training')
 
     # Test which classes performed well
-    testModelAccuracy()
+    testAccuracy()
 
     # Let's load the model we just created and test the accuracy per label
     model = Network()
